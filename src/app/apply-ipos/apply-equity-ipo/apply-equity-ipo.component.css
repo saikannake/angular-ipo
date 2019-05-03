@@ -1,0 +1,74 @@
+.hrLine {
+    border: 1px solid;
+}
+
+.card {
+    margin: 10px;
+    padding: 10px;
+}
+
+.message {
+    padding-top: 20px;
+}
+
+.bid-Details {
+    padding: 10px;
+}
+
+.infoDpId {
+    border-radius: 35px;
+    background: #ADD8E6;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 350px;
+    height: 45px;
+}
+
+.hrLine {
+    border: 1px solid;
+}
+
+.otp-message {
+    padding: 15px;
+}
+
+.para-color {
+    color: red;
+}
+
+.receiptNote {
+    font-size: 15px;
+    padding: 10px;
+    word-spacing: 1px;
+}
+
+.thumbsUp {
+    padding: 10px;
+}
+
+.requestNumber {
+    border-radius: 40px;
+    background-color: lightgreen;
+    width: 550px;
+    margin: 0px 0px 10px 10px;
+}
+
+.msg {
+    margin-top: 9px;
+}
+
+.symbol-exCircle {
+    padding: 14px;
+}
+
+.receiptButton {
+    border-radius: 40px;
+}
+
+.addbtn {
+    padding: 5px;
+}
+
+.example-full-width {
+    width: 100px;
+}

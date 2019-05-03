@@ -1,0 +1,351 @@
+<mat-horizontal-stepper labelPosition="bottom">
+
+    <mat-step label="Enter Details" completed="false" state="phone">
+        <div class="container">
+            <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+                <!-- <div class="form-group row">
+         <label class="control-label col-sm-2" for="dpName">Depository Name:</label>
+            <div class="form-group">
+                <select id="dpName" name="dpName" >
+                    <option *ngFor="let value of pdDropdown"  class="form-control" id="dpName" name="dpName">{{value}}</option>
+                </select>
+           </div>
+        </div>  -->
+
+
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="dpName">Depository Name:</label>
+                    <div class="col-sm-5 form-group">
+                        <input type="text" id="dpName" name="dpName" ngModel class="form-control" placeholder="Enter Depository Name">
+                        <!-- <select id="dpName" name="dpName" >
+                    <option *ngFor="let dpValue of pdDropdown"  class="form-control" id="dpName" name="dpName">{{ dpValue }}</option>
+                </select> -->
+                    </div>
+                    <div>
+                        <p>Enter CSDL or NSDL</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="dpid">DP ID</label>
+                    <div class="col-sm-5 form-group">
+                        <input id="dpid" name="dpid" ngModel class="form-control" placeholder="Enter DP ID">
+                    </div>
+                    <div class="col-md-5 infoDpId">
+                        <p><span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>This is the details of your repository participant and usually start with IN</p>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="clientid">Client ID /Beneficiary No</label>
+                    <div class="col-sm-5 form-group">
+                        <input id="clientid" name="clientid" ngModel class="form-control" placeholder="Enter Client ID">
+                    </div>
+                    <div class="col-md-5 infoDpId">
+                        <p><span><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>This is the details of your repository participant and usually start with IN</p>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="pan">PAN</label>
+                    <div class="col-sm-5 form-group">
+                        <input id="pan" name="pan" class="form-control" ngModel placeholder="Enter PAN">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="investorName">Investor Name</label>
+                    <div class="col-sm-5 form-group">
+                        <input id="investorName" name="investorName" ngModel class="form-control" placeholder="Enter Name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="email">Email Number</label>
+                    <div class="col-sm-5 form-group">
+                        <input id="email" name="email" class="form-control" ngModel matInput placeholder="Enter Email ID">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-2" for="mobile">Mobile Number</label>
+                    <div class="col-sm-5 form-group">
+                        <input id="mobile" name="mobile" class="form-control" ngModel placeholder="Enter Mobile No">
+                    </div>
+                </div>
+                <div class="example-button-row col-md-4 ">
+                    <button type="submit" matStepperNext mat-button color="accent">PROCEED</button>
+                </div>
+            </form>
+        </div>
+    </mat-step>
+    <mat-step label="Conform Details" completed="false">
+
+        <div class="container">
+            <form>
+                <div class="heading">
+                    <h5>Investor details </h5>
+                    <hr />
+                </div>
+                <div class="row conform-Details">
+                    <div class="col-md-6">
+                        <mat-label>Depository Name</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{conformData.dpName}}</mat-label>
+                    </div>
+                </div>
+
+                <div class="row conform-Details">
+                    <div class="col-md-6">
+                        <mat-label>DP ID</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{conformData.dpId}}</mat-label>
+                    </div>
+                </div>
+
+                <div class="row conform-Details">
+                    <div class="col-md-6">
+                        <mat-label>ClientID/Beneficiary ID</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{conformData.clientId}}</mat-label>
+                    </div>
+                </div>
+
+                <div class="row conform-Details">
+                    <div class="col-md-6">
+                        <mat-label>PAN</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{conformData.pan}}</mat-label>
+                    </div>
+                </div>
+                <div class="row conform-Details">
+                    <div class="col-md-6">
+                        <mat-label>Investor Name</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{conformData.investorName}}</mat-label>
+                    </div>
+                </div>
+                <div class="row conform-Details">
+                    <div class="col-md-6">
+                        <mat-label>Email address</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{conformData.email}}</mat-label>
+                    </div>
+                </div>
+                <div class="row conform-Details">
+                    <div class="col-md-6">
+                        <mat-label>Mobile Number</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{conformData.mob}}</mat-label>
+                    </div>
+                </div>
+                <div class="example-button-row row conform-Details">
+                    <div class="col-md-2">
+                        <button type="submit" matStepperNext mat-raised-button color="accent">
+                    CONFIRM
+              </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button mat-raised-button color="accent">
+                    EDIT
+              </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <!-- <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div> -->
+
+    </mat-step>
+
+    <mat-step label="OTP Details" completed="false">
+        <div class="container ">
+            <form>
+                <div class="heading">
+                    <h5> Investor details</h5>
+                    <hr />
+                </div>
+                <div class="row otp-detail">
+                    <div class="col-md-6">
+                        <mat-label>Depository Name</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{otpdata.dpName}}</mat-label>
+                    </div>
+                </div>
+
+                <div class="row otp-detail">
+                    <div class="col-md-6">
+                        <mat-label>DP ID</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{otpdata.dpid}}</mat-label>
+                    </div>
+                </div>
+
+                <div class="row otp-detail">
+                    <div class="col-md-6">
+                        <mat-label>ClientID/Beneficiary ID</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{otpdata.clientId}}</mat-label>
+                    </div>
+                </div>
+
+                <div class="row otp-detail">
+                    <div class="col-md-6">
+                        <mat-label>PAN</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{otpdata.pan}}</mat-label>
+                    </div>
+                </div>
+                <div class="row otp-detail">
+                    <div class="col-md-6">
+                        <mat-label>Investor Name</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{otpdata.investorName}}</mat-label>
+                    </div>
+                </div>
+                <div class="row otp-detail">
+                    <div class="col-md-6">
+                        <mat-label>Email address</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{otpdata.email}}</mat-label>
+                    </div>
+                </div>
+                <div class="row otp-detail">
+                    <div class="col-md-6">
+                        <mat-label>Mobile Number</mat-label>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-label>{{otpdata.mob}}</mat-label>
+                    </div>
+                </div>
+                <div class="example-button-row row">
+                    <div class="col-md-2 otp-detail">
+                        <button mat-raised-button color="accent">CONFIRM</button>
+                    </div>
+                    <div class="otp-detail">
+                        <button mat-raised-button color="accent"> EDIT  </button>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <h5>You will recieve an OTP on your registered mobile number xxxxxxx310</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Enter the OTP">
+                        </mat-form-field>
+                    </div>
+                    <div class="otpmessage">
+                        <p>didn't recieve the OTP?<span>Resend OTP</span>or <span>Get OTP on Call</span></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" matStepperNext mat-raised-button color="accent" class="submitbutton">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+        <!-- <div>
+            <button mat-button matStepperPrevious>Back</button>
+        </div> -->
+    </mat-step>
+    <mat-step label="Receipt Details" completed="false">
+        <div class="container ">
+            <div class="requestNumber row">
+                <span class="thumbsUp"><i class="fa fa-thumbs-up fa-2x"></i></span>
+                <p class="receiptNote">HSBA registration hs been completed.The request number is xxxxxx</p>
+            </div>
+            <div class="heading">
+                <h5>Request Sammary </h5>
+                <hr />
+            </div>
+            <div class="row receipt-Details">
+                <div class="col-md-6">
+                    <mat-label>Depository Name</mat-label>
+                </div>
+                <div class="col-md-6">
+                    <mat-label>{{receiptdata.dpName}}</mat-label>
+                </div>
+            </div>
+
+            <div class="row receipt-Details">
+                <div class="col-md-6">
+                    <mat-label>DP ID</mat-label>
+                </div>
+                <div class="col-md-6">
+                    <mat-label>{{receiptdata.dpid}}</mat-label>
+                </div>
+            </div>
+
+            <div class="row receipt-Details">
+                <div class="col-md-6">
+                    <mat-label>ClientID/Beneficiary ID</mat-label>
+                </div>
+                <div class="col-md-6">
+                    <mat-label>{{receiptdata.clientId}}</mat-label>
+                </div>
+            </div>
+
+            <div class="row receipt-Details">
+                <div class="col-md-6">
+                    <mat-label>PAN</mat-label>
+                </div>
+                <div class="col-md-6">
+                    <mat-label>{{receiptdata.pan}}</mat-label>
+                </div>
+            </div>
+            <div class="row receipt-Details">
+                <div class="col-md-6">
+                    <mat-label>Investor Name</mat-label>
+                </div>
+                <div class="col-md-6">
+                    <mat-label>{{receiptdata.investorName}}</mat-label>
+                </div>
+            </div>
+            <div class="row receipt-Details">
+                <div class="col-md-6">
+                    <mat-label>Email address</mat-label>
+                </div>
+                <div class="col-md-6">
+                    <mat-label>{{receiptdata.email}}</mat-label>
+                </div>
+            </div>
+            <div class="row receipt-Details">
+                <div class="col-md-6">
+                    <mat-label>Mobile Number</mat-label>
+                </div>
+                <div class="col-md-6">
+                    <mat-label>{{receiptdata.email}}</mat-label>
+                </div>
+            </div>
+            <div class="example-button-row row receipt-Details">
+                <div class="col-md-2 investButton">
+                    <button mat-raised-button color="accent">
+                          INVEST NOW
+                    </button>
+                </div>
+                <div class="backtohomeButton">
+                    <button matStepperPrevious mat-raised-button color="accent">
+                  BACK TO HOME
+            </button>
+                </div>
+
+            </div>
+        </div>
+    </mat-step>
+
+</mat-horizontal-stepper>

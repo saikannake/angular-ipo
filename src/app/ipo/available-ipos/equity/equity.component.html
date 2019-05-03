@@ -1,0 +1,58 @@
+<div class="mat-elevation-z8">
+    <h5 class="heading">Equity IPOs</h5>
+    <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef> Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lotsize">
+            <th mat-header-cell *matHeaderCellDef> Lot size </th>
+            <td mat-cell *matCellDef="let element"> {{ element.lotsize}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="minprice">
+            <th mat-header-cell *matHeaderCellDef> Min Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.minprice | currency:'INR':true:'1.2-4' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="maxprice">
+            <th mat-header-cell *matHeaderCellDef> Max Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.maxprice | currency:'INR':true:'1.2-4'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="enddate">
+            <th mat-header-cell *matHeaderCellDef> End Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.enddate | date: 'dd/MM/yyyy' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element"> {{element.action }} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+
+</div>
+
+<!-- <details ontoggle>
+    <div>
+        <div style="color:red">
+            <hr style="border: 1px solid red"> </div>
+    </div>
+    <div>
+        <p style="color:red">Get Prospects | View Details</p>
+    </div>
+
+</details> -->

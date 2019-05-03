@@ -1,0 +1,34 @@
+.hrLine {
+    border: 1px solid;
+}
+
+.card {
+    margin: 10px;
+    padding: 10px;
+}
+
+.infoDpId {
+    border-radius: 35px;
+    background: #ADD8E6;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 350px;
+    height: 45px;
+}
+
+.msg {
+    /* margin-top: 15px; */
+}
+
+.otpmessage {
+    margin: 20px 0px 0px 0px;
+}
+
+.receiptButton {
+    margin-right: 8px;
+    border-radius: 27PX;
+}
+
+.fa {
+    margin: 10px;
+}

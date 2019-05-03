@@ -1,0 +1,80 @@
+<div class="container ">
+    <form (ngSubmit)="onSubmit()">
+        <div class="heading">
+            <h5>Investor details </h5>
+            <hr />
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-label>Depository Name</mat-label>
+            </div>
+            <div class="col-md-6">
+                <mat-label>{{conformData.dpName}}</mat-label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <mat-label>DP ID</mat-label>
+            </div>
+            <div class="col-md-6">
+                <mat-label>{{conformData.dpId}}</mat-label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <mat-label>ClientID/Beneficiary ID</mat-label>
+            </div>
+            <div class="col-md-6">
+                <mat-label>{{conformData.clientId}}</mat-label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <mat-label>PAN</mat-label>
+            </div>
+            <div class="col-md-6">
+                <mat-label>{{conformData.pan}}</mat-label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-label>Investor Name</mat-label>
+            </div>
+            <div class="col-md-6">
+                <mat-label>{{conformData.investorName}}</mat-label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-label>Email address</mat-label>
+            </div>
+            <div class="col-md-6">
+                <mat-label>{{conformData.email}}</mat-label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-label>Mobile Number</mat-label>
+            </div>
+            <div class="col-md-6">
+                <mat-label>{{conformData.mob}}</mat-label>
+            </div>
+        </div>
+        <div class="example-button-row row">
+            <div class="col-md-2">
+                <button type="submit" matStepperNext mat-raised-button color="accent">
+            CONFIRM
+      </button>
+            </div>
+            <div class="col-md-6">
+                <button mat-raised-button color="accent">
+            EDIT
+      </button>
+            </div>
+
+        </div>
+    </form>
+</div>
